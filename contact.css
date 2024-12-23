@@ -1,0 +1,111 @@
+/* :root {
+    --bg-color: #1A9ED9 !important;
+    --bg-light: #dddddde8;
+    --text-color: #fff;
+    --trade-text-color: #1A9ED9;
+    --trade-text-darkcolor: #074866;
+    --black-text-color: #000000e0;
+    --darkblue-text-color: rgb(4, 35, 78);
+    --trade-second-color: #F48029 !important;
+    --secondary-color: #6c757d;
+    --gray-color: #04325ada;
+
+} */
+
+#contact-form .submit-btn {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#contact-form .submit-btn:hover {
+    background-color: var(--trade-second-color);
+}
+
+.address-title {
+    background-color: var(--trade-second-color);
+    color: var(--text-color);
+
+}
+
+.address-title h5 {
+    font-weight: bold;
+}
+
+#contact-form label {
+    color: var(--trade-text-darkcolor);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s;
+    padding-left: 10px;
+}
+
+.form-control:focus {
+    border-bottom-color: var(--trade-text-color);
+}
+
+.form-control::placeholder {
+    color: #aaa;
+}
+
+.form-group::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color:var(--trade-text-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.form-control:focus+.form-group::after {
+    width: 100%;
+}
+
+
+/* Style de base pour le formulaire */
+#form-card {
+    position: relative; 
+    padding: 20px;
+    border: 2px solid transparent; 
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Coin supérieur gauche */
+#form-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px; /* Taille de la bordure */
+    height: 30px;
+    border-top: 4px solid var(--trade-second-color);
+    border-left: 4px solid var(--trade-second-color);
+    border-top-left-radius: 8px; /* Ajoute un arrondi */
+}
+
+/* Coin inférieur droit */
+#form-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px; /* Taille de la bordure */
+    height: 30px;
+    border-bottom: 4px solid var(--trade-second-color);
+    border-right: 4px solid var(--trade-second-color);
+    border-bottom-right-radius: 8px; /* Ajoute un arrondi */
+}

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Appartements Meublés</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="appartement.css">
+
+    <style>
+        #map {
+            height: 250px;
+            /* Hauteur de la carte */
+            width: 100%;
+            /* Largeur maximale */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Position the image container (needed to position the left and right arrows) */
+        .container {
+            position: relative;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Add a pointer when hovering over the thumbnail images */
+        .cursor {
+            cursor: pointer;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 380px;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Container for image text */
+        .caption-container {
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Six columns side by side */
+        .column {
+            float: left;
+            width: 16.66%;
+        }
+
+        /* Add a transparency effect for thumnbail images */
+        .demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+        .card-detail{
+            font-weight: lighter;
+            padding: 5px 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg bg-white ">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Easy Services Logo" width="150" height="40">
+            </a>
+
+            <!-- Bouton hamburger pour écrans réduits -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Contenu du menu -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">ACCUEIL</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="produitsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            PRODUITS & SERVICES
+                        </a>
+                        <ul class="dropdown-menu custom-bg" aria-labelledby="produitsDropdown">
+                            <li><a class="dropdown-item" href="integration.html">Integration de solution</a></li>
+                            <li><a class="dropdown-item" href="assistance.html">Assistance informatique</a></li>
+                            <li><a class="dropdown-item" href="virtualisation.html">Virtualisation</a></li>
+                            <li><a class="dropdown-item" href="ui.html">Application mobile, web</a></li>
+                            <li><a class="dropdown-item " href="sms.html">SMS banking et Cloud</a></li>
+                            <li><a class="dropdown-item  " href="tracking.html">Géolocalisation/tracking</a></li>
+                            <li><a class="dropdown-item" href="conseil.html">Conseil et formation</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="produitsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            LOCATION
+                        </a>
+                        <ul class="dropdown-menu custom-bg" aria-labelledby="produitsDropdown">
+                            <li><a class="dropdown-item fw-bold" href="appartement.html">Appartements meublés</a></li>
+                            <li><a class="dropdown-item " href="assistance.html">Voitures</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">CONTACTS</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header Section -->
+
+    <!-- Apartment detail section -->
+    <section class="mt-4">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-8 ">
+                    <div class="container">
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 6</div>
+                            <img src="images/appartements/image1.jpg" style="width:100%;">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 6</div>
+                            <img src="images/appartements/image1.jpg" style="width:100%; ">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 6</div>
+                            <img src="images/appartements/image1.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 6</div>
+                            <img src="images/appartements/image1.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 6</div>
+                            <img src="images/appartements/image1.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">6 / 6</div>
+                            <img src="images/appartements/image1.jpg" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+                        <div class="row">
+                            <div class="column">
+                                <img class="demo cursor" src="images/appartements/image1.jpg" style="width:100%"
+                                    onclick="currentSlide(1)" alt="The Woods">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/appartements/image1.jpg" style="width:100%"
+                                    onclick="currentSlide(2)" alt="Cinque Terre">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/appartements/image1.jpg" style="width:100%"
+                                    onclick="currentSlide(3)" alt="Mountains and fjords">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/appartements/image1.jpg" style="width:100%"
+                                    onclick="currentSlide(4)" alt="Northern Lights">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/appartements/image1.jpg" style="width:100%"
+                                    onclick="currentSlide(5)" alt="Nature and sunrise">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/appartements/image1.jpg" style="width:100%"
+                                    onclick="currentSlide(6)" alt="Snowy Mountains">
+                            </div>
+                        </div>
+                    </div>
+                   <div class="container mt-3">
+                    <div class="row">
+                        <div class="col-sm-4 ">
+                            <div class="card card-detail"><span><i class="fa-solid fa-house"></i> Tout l'hébergement est pour vous </span>  </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card card-detail"><span><i class="fa-solid fa-warehouse"></i> Parking sur palce gratuit</span> </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card card-detail"><span><i class="fa-solid fa-broom"></i> Nettoyage</span> </div>
+                        </div>
+                        <div class="col-sm-4 mt-2">
+                            <div class="card card-detail"><span><i class="fa-solid fa-tv"></i> Chaîne télé</span> </div>
+                        </div>
+                        <div class="col-sm-4  mt-2">
+                            <div class="card card-detail"><span><i class="fa-solid fa-wifi"></i> Connexion Wi-Fi gratuit</span> </div>
+                        </div>
+                        <div class="col-sm-4  mt-2">
+                            <div class="card card-detail"><span><i class="fa-solid fa-bath"></i> Salle de bain privative</span>  </div>
+                        </div>
+                        <div class="col-sm-4  mt-2">
+                            <div class="card card-detail"><span><i class="fa-regular fa-eye"></i> Vue</span> </div>
+                        </div>
+                        <div class="col-sm-3  mt-2">
+                            <div class="card card-detail"><span><i class="fa-solid fa-temperature-arrow-up"></i> Climatisation</span></div>
+                        </div>
+                        <div class="col-sm-2  mt-2">
+                            <div class="card card-detail"><span><i class="fa-solid fa-fire-burner"></i> Cuisine</span></div>
+                        </div>
+                        <div class="col-sm-3  mt-2">
+                            <div class="card card-detail"><span><i class="fa-solid fa-bacon"></i> Terrasse</span></div>
+                        </div>
+                        <div class="col-sm-12  mt-2">
+                            <div class="card card-detail"><span><i class="fa-solid fa-shower"></i> Douche</span></div>
+                        </div>
+                    </div>
+                   </div>
+                   <div class="container mt-4">
+                    <p>Nos appartements sont situés à Lomé. Vous bénéficiez gratuitement d'un parking privé et d'une connexion Wi-Fi.</p>
+                    <p>Cet appartement comprend une chambre, une télévision à écran plat. un lave-linge et une salle de bains pourvue d'une douche. Sa Cuisine entièrment équipée comporte un micro-onde et un réfrigérateur. Vous pourrez prendre vos repas dans le coin de repas éxtérieur tout admirant la vue sur la mer. Ce appartement est non-fumeurs et insonorisé</p>
+                    <p>L'aéroport de Lomé-Tokoin est à 15minute de route.</p>
+                   </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="fw-bold" style="color: #f96302;">Quartier: <br> <span
+                                    class="text-dark">Hedzranawoe</span></h3>
+                            <p>"Le lieu est très popore, bien situé et le personnel est courtois. Merci encore pour
+                                cette belle expérience. Au plaisir de se revoir prochainement"</p>
+                            <div>
+                                <span
+                                    style="background-color: #f96302; padding: 5px; color: #fff; border-radius: 5px;">8,5</span>
+                                <span class="fw-bold"> Superbe <sub style="font-weight: normal;">6 expériences
+                                        vécues</sub></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <div id="map"></div> <!-- Conteneur pour la carte -->
+                        </div>
+                        <div class="col-md-12 mt-4 ">
+                            <button class="form-control fw-bold"
+                                style="background-color: #f96302; color: #fff; text-transform: uppercase;">Réservez
+                                maintenant</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Inclure les fichiers CSS et JS nécessaires -->
+    <script src="https://cdn.jsdelivr.net/npm/moment/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+    <script>
+        // Initialisation du date range picker
+        $(document).ready(function () {
+            $('#dateRange').daterangepicker({
+                opens: 'right',
+                locale: {
+                    format: 'DD/MM/YYYY',
+                    separator: ' au ',
+                    applyLabel: 'Appliquer',
+                    cancelLabel: 'Annuler',
+                    fromLabel: 'De',
+                    toLabel: 'À',
+                    customRangeLabel: 'Personnalisé',
+                    weekLabel: 'S',
+                    daysOfWeek: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+                    monthNames: [
+                        'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
+                        'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
+                    ],
+                    firstDay: 1
+                }
+            });
+        });
+    </script>
+    <script>
+        // Textes à alterner
+        const headlines = [
+            "Nos appartements meublés",
+            "Logements pour vos besoins",
+            "Un style qui vous convient",
+        ];
+
+
+        const subtexts = [
+            "Nos offres s'adaptent à vos exigences",
+            "Réservez dès maintenant",
+            "Votre satisfaction est notre priorité",
+        ];
+
+        // Identifiants des zones de texte
+        const headlineElement = document.getElementById("dynamicText");
+        const subtextElement = document.getElementById("dynamicSubText");
+
+        let index = 0;
+
+        // Fonction pour changer les textes
+        function changeText() {
+            index = (index + 1) % headlines.length; // Alterne entre les textes
+
+            // Ajoute une animation fluide pour chaque texte
+            headlineElement.classList.remove("text-animated");
+            subtextElement.classList.remove("text-animated");
+
+            // Met à jour les textes avec un léger délai pour la fluidité
+            setTimeout(() => {
+                headlineElement.textContent = headlines[index];
+                subtextElement.textContent = subtexts[index];
+
+                headlineElement.classList.add("text-animated");
+                subtextElement.classList.add("text-animated");
+            }, 200); // Attends la fin de l'animation actuelle
+        }
+
+        // Alterne les textes toutes les 5 secondes
+        setInterval(changeText, 5000);
+
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialiser la carte avec les coordonnées
+        const map = L.map('map').setView([6.1633363, 1.2151443], 13); // Exemple : Paris (48.8566, 2.3522)
+
+        // Ajouter une couche de tuiles (tiles) à la carte
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Ajouter un marqueur à la position spécifiée
+        const marker = L.marker([6.1633363, 1.2151443]).addTo(map);
+        marker.bindPopup("<b>Position actuelle</b><br>48.8566, 2.3522").openPopup();
+    </script>
+    <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=set_to_true_or_false"></script>
+    <script>
+        // Position par défaut (Châtelet à Paris)
+        var centerpos = new google.maps.LatLng(6.1633363, 1.2151443);
+
+        // Options relatives à la carte
+        var optionsGmaps = {
+            center: centerpos,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            zoom: 15
+        };
+        // ROADMAP peut être remplacé par SATELLITE, HYBRID ou TERRAIN
+        // Zoom : 0 = terre entière, 19 = au niveau de la rue
+
+        // Initialisation de la carte pour l'élément portant l'id "map"
+        var map = new google.maps.Map(document.getElementById("map"), optionsGmaps);
+
+        // .. et la variable qui va stocker les coordonnées
+        var latlng;
+
+        // Fonction de callback en cas de succès
+        function maPosition(position) {
+
+            var infopos = "Position déterminée :\n";
+            infopos += "Latitude : " + position.coords.latitude + "\n";
+            infopos += "Longitude: " + position.coords.longitude + "\n";
+            infopos += "Altitude : " + position.coords.altitude + "\n";
+            infopos += "Vitesse  : " + position.coords.speed + "\n";
+            document.getElementById("infoposition").innerHTML = infopos;
+
+            // Un nouvel objet LatLng pour Google Maps avec les paramètres de position
+            latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+            // Ajout d'un marqueur à la position trouvée
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title: "Vous êtes ici"
+            });
+
+            // Permet de centrer la carte sur la position latlng
+            map.panTo(latlng);
+
+        }
+
+        function erreurPosition(error) {
+            var info = "Erreur lors de la géolocalisation : ";
+            switch (error.code) {
+                case error.TIMEOUT:
+                    info += "Timeout !";
+                    break;
+                case error.PERMISSION_DENIED:
+                    info += "Vous n’avez pas donné la permission";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    info += "La position n’a pu être déterminée";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    info += "Erreur inconnue";
+                    break;
+            }
+            document.getElementById("infoposition").innerHTML = info;
+        }
+
+    </script> -->
+</body>
+
+</html>

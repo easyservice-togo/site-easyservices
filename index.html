@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="EASY SERVICES, société multi-services spécialisée dans les solutions informatiques, financières, la location d'appartements meublés et la géolocalisation/tracking. Des solutions adaptées à vos besoins pour un service fiable et de qualité.">
+    <title>Easy services</title>
+    <!-- Inclure Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg bg-white ">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Easy Services Logo" width="150" height="40">
+            </a>
+
+            <!-- Bouton hamburger pour écrans réduits -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Contenu du menu -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" href="index.html">ACCUEIL</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="produitsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            PRODUITS & SERVICES
+                        </a>
+                        <ul class="dropdown-menu custom-bg" aria-labelledby="produitsDropdown">
+                            <li><a class="dropdown-item" href="integration.html">Integration de solution</a></li>
+                            <li><a class="dropdown-item" href="assistance.html">Assistance informatique</a></li>
+                            <li><a class="dropdown-item" href="virtualisation.html">Virtualisation</a></li>
+                            <li><a class="dropdown-item" href="ui.html">Application mobile, web</a></li>
+                            <li><a class="dropdown-item " href="sms.html">SMS banking et Cloud</a></li>
+                            <li><a class="dropdown-item  " href="tracking.html">Géolocalisation/tracking</a></li>
+                            <li><a class="dropdown-item" href="conseil.html">Conseil et formation</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="produitsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                           LOCATION
+                        </a>
+                        <ul class="dropdown-menu custom-bg" aria-labelledby="produitsDropdown">
+                            <li><a class="dropdown-item" href="appartement.html">Appartements meublés</a></li>
+                            <li><a class="dropdown-item " href="assistance.html">Voitures</a></li> 
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">CONTACTS</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- En-tête principal -->
+    <header class="py-5" style="background: url('background.jpg') center/cover;">
+        <div class="container text-white">
+            <h1 class="fw-bold" style="text-transform: uppercase;">easyservices informatique</h1>
+            <p class="lead">Est société multi-services spécialisée dans les solutions informatiques, <br>financières, la
+                location d'appartements meublés et la géolocalisation/tracking. <br> Des solutions adaptées à vos
+                besoins pour un service fiable et de qualité.</p>
+            <a href="#" class="btn text-white know-more">En savoir plus</a>
+        </div>
+    </header>
+    <!-- Section Services -->
+    <section class="container py-3 section-services">
+        <div class="row text-center">
+            <!-- Carte 1 -->
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 service-box ser-1">
+                    <div class="card-header service-title text-center">
+                        <h5 class="mb-0">INFORMATIQUES</h5>
+                    </div>
+                    <div class="card-body bg-dark text-white">
+                        <p class="card-text">Nous offrons des solutions informatiques sur mesure, adaptées à vos besoins
+                            pour garantir performance et fiabilité.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte 2 -->
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 service-box ser-2">
+                    <div class="card-header service-title text-center">
+                        <h5 class="mb-0">APPARTEMENT MEUBLES</h5>
+                    </div>
+                    <div class="card-body bg-dark text-white">
+                        <p class="card-text">Les meublés EASY SERVICES allient esthétique et beauté, tout en vous
+                            offrant un cadre chaleureux, calme, discret et unique.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte 3 -->
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 service-box ser-3">
+                    <div class="card-header service-title text-center">
+                        <h5 class="mb-0">SOLUTION ANTIVIRUS ESET</h5>
+                    </div>
+                    <div class="card-body bg-dark text-white">
+                        <p class="card-text">Protégez vos appareils avec l'antivirus ESET : une solution fiable pour une
+                            sécurité optimale contre toutes les menaces.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte 4 -->
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 service-box ser-4">
+                    <div class="card-header service-title text-center">
+                        <h5 class="mb-0">GPS / SECURITE</h5>
+                    </div>
+                    <div class="card-body bg-dark text-white">
+                        <p class="card-text">Suivez vos véhicules et biens en temps réel avec nos solutions GPS,
+                            garantissant sécurité et efficacité.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-afford text-center">
+        <div class="container">
+            <h3 class="">Quels sont les divers services <br> que nous proposons en informatique ?</h3>
+            <p class="mb-5">EASYSERVICES est une entreprise de consultance informatique spécialisée dans la création de
+                sites web, le développement d'applications web et mobiles.
+                la conception de logiciels, le community management (gestion des réseaux sociaux), ainsi que la création
+                graphique. En résumé, une véritable agence digitale complète.
+            </p>
+        </div>
+    </section>
+    <!-- Section services détaillés -->
+    <section class="bg-light py-2 services-detail">
+        <div class="container text-center">
+            <div class="row">
+                <!-- Carte détaillée -->
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 ">
+                        <img src="images/integration.jpg" class="card-img-top" alt="Intégration de solution">
+                        <div class="card-body">
+                            <h5 class="card-title">Intégration de solution</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Autres cartes similaires -->
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 ">
+                        <img src="images/assistance.jpg" class="card-img-top" alt="Assistance informatique">
+                        <div class="card-body">
+                            <h5 class="card-title">Assistance informatique</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 ">
+                        <img src="images/virtualisation.jpg" class="card-img-top" alt="Virtualisation">
+                        <div class="card-body">
+                            <h5 class="card-title">Virtualisation</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 ">
+                        <img src="images/ux.jpg" class="card-img-top" alt="Application mobile">
+                        <div class="card-body">
+                            <h5 class="card-title">Application mobile, web
+                                UI/UX Design
+                            </h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 ">
+                        <img src="images/banking.jpg" class="card-img-top" alt="SMS banking et Cloud computing">
+                        <div class="card-body">
+                            <h5 class="card-title">SMS banking et Cloud computing </h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 ">
+                        <a href="conseil.html"><img src="images/formation.jpg" class="card-img-top"
+                                alt="Conseil et Formation"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Conseil et Formation</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Footer -->
+    <footer class="section-trade-color py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <span style="width:20px;"><img src="images/logo.png" alt="" style="width:50%;"></span>
+                    <p>EASY SERVICES est une société multi-services spécialisée dans les solutions informatiques et
+                        financières. Nous proposons également des services de location d'appartements meublés ainsi que
+                        des solutions de géolocalisation et de suivi (tracking).</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>NOS SERVICES</h5>
+                    <ul class="list-unstyled">
+                        <li>Informatique</li>
+                        <li>Finances</li>
+                        <li>GPS/Sécurité</li>
+                        <li>Location de meubles</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>ADRESSES</h5>
+                    <ul class="list-unstyled-address" style="list-style-type: none;">
+                        <li><i class="fa-solid fa-phone"></i> +228 XXXXXXXX</li>
+                        <li> <i class="fa-solid fa-location-dot"></i> Adewui non loin de l'ambassade du sénegal</li>
+                        <li><i class="fa-solid fa-at"></i> info@easyservices.tg</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logos Partenaires -->
+    <section class="py-4 bg-white">
+        <div class="container">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img src="logo1.png" alt="Logo Partenaire 1">
+                </div>
+                <div class="item">
+                    <img src="logo2.png" alt="Logo Partenaire 2">
+                </div>
+                <div class="item">
+                    <img src="logo3.png" alt="Logo Partenaire 3">
+                </div>
+                <div class="item">
+                    <img src="logo4.png" alt="Logo Partenaire 4">
+                </div>
+                <div class="item">
+                    <img src="logo5.png" alt="Logo Partenaire 5">
+                </div>
+                <div class="item">
+                    <img src="logo6.png" alt="Logo Partenaire 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="owl.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const serviceBoxes = document.querySelectorAll('.service-box');
+            let activeIndex = 0;
+
+            function highlightNextCard() {
+                // Retirer la classe active de tous les éléments
+                serviceBoxes.forEach((box) => box.classList.remove('active'));
+
+                // Ajouter la classe active au prochain élément
+                serviceBoxes[activeIndex].classList.add('active');
+
+                // Passer à l'élément suivant (avec boucle)
+                activeIndex = (activeIndex + 1) % serviceBoxes.length;
+
+                // Relancer après un délai
+                setTimeout(highlightNextCard, 2000); // 2 secondes par élément
+            }
+
+            // Lancer la boucle
+            highlightNextCard();
+        });
+
+
+    </script>
+</body>
+
+</html>

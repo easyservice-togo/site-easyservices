@@ -1,0 +1,43 @@
+/* 
+:root {
+    --bg-color: #1A9ED9 !important;
+    --bg-light: #dddddde8;
+    --text-color: #fff;
+    --trade-text-color: #1A9ED9;
+    --trade-text-darkcolor: #074866;
+    --black-text-color: #000000e0;
+    --darkblue-text-color: rgb(4, 35, 78);
+    --trade-second-color: #F48029 !important;
+    --secondary-color: #6c757d;
+    --gray-color: #04325ada;
+
+} */
+.show-expertise{
+    text-transform: uppercase;
+    border-radius:15px;
+    background-color: var(--trade-second-color);
+    color: var(--text-color);
+    border: none;
+    padding: 5px;
+}
+.ui-details{
+    margin-top: 50px;
+}
+.ui-details h3{
+    font-weight: bold;
+    color: var(--trade-text-darkcolor);
+}
+
+.point {
+    font-size: 2em;
+    color: var(--trade-text-darkcolor);
+    font-weight: bold;
+}
+
+.ui-details p{
+    font-size: 1em;
+    
+}
+.ui-details .first-detail{
+    line-height: 5px;
+}

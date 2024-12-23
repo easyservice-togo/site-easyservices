@@ -1,0 +1,35 @@
+/* :root {
+    --bg-color: #1A9ED9 !important;
+    --bg-light: #dddddde8;
+    --text-color: #fff;
+    --trade-text-color: #1A9ED9;
+    --trade-text-darkcolor: #074866;
+    --black-text-color: #000000e0;
+    --darkblue-text-color: rgb(4, 35, 78);
+    --trade-second-color: #F48029 !important;
+    --secondary-color: #6c757d;
+    --gray-color: #04325ada;
+
+} */
+
+
+.sms-desc h1{
+    font-size: 1.8em; 
+    font-weight: bold;
+    padding-top: 20px;
+}
+.sms-desc button {
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 20px;
+    padding: 5px 5px;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.sms-desc button:hover{
+    background-color: var(--trade-second-color);
+}
+.sms-desc p {
+    font-size: 1em;
+}

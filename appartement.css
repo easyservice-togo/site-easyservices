@@ -1,0 +1,163 @@
+:root {
+    --bg-color: #f96302 !important;
+    --bg-light: #dddddde8;
+    --text-color: #fff;
+    --trade-text-color: #1A9ED9;
+    --trade-text-darkcolor: #074866;
+    --black-text-color: #000000e0;
+    --darkblue-text-color: rgb(4, 35, 78);
+    --trade-second-color: #F48029 !important;
+    --secondary-color: #6c757d;
+    --gray-color: #04325ada;
+
+}
+
+body {
+    background-color: rgb(241, 245, 248);
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    /* Taille par défaut pour petits écrans */
+    text-align: center;
+    /* Centrer le texte sur les écrans mobiles */
+    word-wrap: break-word;
+    /* Évite les débordements */
+}
+
+.header-content p {
+    font-size: 1rem;
+    /* Réduire légèrement la taille du texte pour les mobiles */
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .header-content h1 {
+        font-size: 3rem;
+        /* Taille pour tablettes et écrans moyens */
+        text-align: left;
+        /* Aligner le texte à gauche pour écrans plus larges */
+    }
+
+    .header-content p {
+        font-size: 1.25rem;
+        text-align: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .header-content h1 {
+        font-size: 4rem;
+        /* Taille pour grands écrans */
+    }
+
+    .header-content p {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Style pour le header avec image de fond et overlay */
+.header {
+    background: url('images/appartements/image-de-fond.jpg') no-repeat center center/cover;
+    position: relative;
+    height: 60vh;
+    /* Hauteur du header */
+    color: white;
+}
+
+/* Animation de l'image de fond */
+/* Animation de l'image de fond */
+.header {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: backgroundAnimate 50s infinite alternate ease-in-out;
+}
+
+/* Keyframes pour animer l'image de fond */
+@keyframes backgroundAnimate {
+    0% {
+        background-position: center center;
+    }
+
+    50% {
+        background-position: center top;
+    }
+
+    100% {
+        background-position: center bottom;
+    }
+}
+
+/* Animation d'apparition des textes */
+.text-animated {
+    opacity: 0;
+    animation: textFadeIn 1s ease-in-out forwards;
+}
+
+/* Keyframes pour le texte */
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 136, 0, 0.6);
+    /* Overlay orange transparente */
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    /* Au-dessus de l'overlay */
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-bar {
+    max-width: 800px;
+    margin: 0 auto;
+    border: var(--trade-second-color) 2px solid;
+    border-radius: 8px;
+}
+
+.search-bar button {
+    background-color: var(--trade-text-color);
+    color: var(--text-color);
+}
+
+.category {
+    background-color: var(--trade-second-color);
+    color: var(--text-color);
+    width: 150px;
+    padding: 5px 0;
+    margin-top: -30px;
+    border-radius: 15px;
+}
+
+.category :hover {
+    background-color: var(--trade-text-color);
+}
+
+.appartement-unit:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

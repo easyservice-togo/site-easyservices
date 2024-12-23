@@ -1,0 +1,296 @@
+:root {
+    --bg-color: #f96302 !important;
+    --bg-light: #dddddde8;
+    --text-color: #fff;
+    --trade-text-color: #1A9ED9;
+    --trade-text-darkcolor: #074866;
+    --black-text-color: #000000e0;
+    --darkblue-text-color: rgb(4, 35, 78);
+    --trade-second-color: #F48029 !important;
+    --secondary-color: #6c757d;
+    --gray-color: #04325ada;
+
+}
+
+/* f96302 1A9ED9 */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    box-shadow: 0 0 5px var(--gray-color);
+    margin-bottom: 5px;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--trade-second-color);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.dropdown-menu.custom-bg {
+    background-color: #f8f9fa;
+}
+
+.dropdown-menu.custom-bg .dropdown-item {
+    color: #333;
+    font-size: 1em;
+}
+
+.dropdown-menu.custom-bg .dropdown-item:hover {
+    background-color: var(--trade-text-color);
+    color: var(--text-color);
+}
+
+header {
+    min-height: 450px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.trust-logos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.trust-logos img {
+    max-width: 100px;
+}
+
+.know-more {
+    background-color: var(--bg-color);
+}
+
+.contact-label {
+    color: var(--trade-text-color);
+}
+
+/* Chevauchement de la section */
+.section-services {
+    margin-top: -100px;
+    /* Marge négative pour chevauchement */
+    position: relative;
+    z-index: 15;
+    /* Pour s'assurer que la section est au-dessus */
+}
+
+.service-box {
+    height: 186px;
+}
+
+/* Styles de base */
+/* Style de base des cartes */
+.service-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    /* Ajout d'une transition fluide */
+}
+
+/* Animation de la bordure lumineuse */
+.service-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    /* Bordures initialement transparentes */
+    box-sizing: border-box;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Animation activée */
+.service-box.active {
+    transform: scale(1.05);
+    /* Zoom léger */
+}
+
+.service-box.active::before {
+    animation: light-trail 2s linear infinite;
+    /* Lancement de l'animation */
+}
+
+/* Animation de la lumière qui passe le long de la bordure */
+@keyframes light-trail {
+    0% {
+        border-color: var(--trade-text-color) transparent transparent transparent;
+        /* Haut */
+    }
+
+    25% {
+        border-color: transparent var(--trade-text-color) transparent transparent;
+        /* Droite */
+    }
+
+    50% {
+        border-color: transparent transparent var(--trade-text-color) transparent;
+        /* Bas */
+    }
+
+    75% {
+        border-color: transparent transparent transparent var(--trade-text-color);
+        /* Gauche */
+    }
+
+    100% {
+        border-color: var(--trade-text-color) transparent transparent transparent;
+        /* Retour au début */
+    }
+}
+
+
+
+
+.service-title {
+    font-weight: bold;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.card-header.service-title h5 {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.services-afford {
+    background-color: var(--bg-light);
+    padding: 1em 0;
+    margin: 15px 0;
+}
+
+.services-afford .container h3 {
+    line-height: 25px;
+    padding-top: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--darkblue-text-color);
+}
+
+
+.services-detail .card-img-top {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.services-detail .card {
+    height: 350px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.services-detail .card:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Ajustements internes de la carte */
+.services-detail .card-body {
+    padding: 10px;
+    text-align: center;
+}
+
+.services-detail .card-title {
+    color: var(--black-text-color);
+    font-weight: bold;
+}
+
+/* section-trade-color */
+.section-trade-color {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.section-trade-color h5 {
+    display: inline-block;
+    position: relative;
+    color: #ffffff;
+}
+
+.section-trade-color h5::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    /* Décalage sous le texte */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* Épaisseur de la ligne */
+    background: linear-gradient(to right, var(--gray-color) 60%, white 40%);
+}
+
+/* footer */
+footer ul.list-unstyled li {
+    position: relative;
+    padding-left: 20px;
+    /* Espace pour la puce */
+    line-height: 2;
+}
+
+footer ul.list-unstyled li::before {
+    content: '•';
+    /* Symbole de puce */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-60%);
+    color: var(--gray-color);
+    /* Couleur de la puce */
+    font-size: 2em;
+    /* Taille de la puce */
+    line-height: 1;
+}
+
+
+/* Styles pour la liste */
+.list-unstyled-address {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-unstyled-address li {
+    margin: 0;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.list-unstyled-address li i {
+    margin-right: 8px;
+    font-size: 1em;
+}
+
+.img-container{
+    max-width: 100%;
+    height: auto;
+}
+.img-container img{
+    width: 100%;
+}
+
+
+.owl-carousel .item {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.owl-carousel img {
+    max-width: 100%;
+    border-radius: 8px;
+}

@@ -291,6 +291,6 @@ footer ul.list-unstyled li::before {
 }
 
 .owl-carousel img {
-    max-width: 100%;
+    max-width: 70%;
     border-radius: 8px;
 }

@@ -81,7 +81,9 @@ header {
 .service-box {
     height: 186px;
 }
-
+.service-box .card-body{
+    background-color: rgb(1, 28, 63);
+}
 /* Styles de base */
 /* Style de base des cartes */
 .service-box {
@@ -110,7 +112,11 @@ header {
 }
 
 /* Animation activée */
-.service-box.active {
+/* .service-box.active {
+    transform: scale(1.05);
+    
+} */
+.service-box:hover {
     transform: scale(1.05);
     /* Zoom léger */
 }
@@ -121,7 +127,7 @@ header {
 }
 
 /* Animation de la lumière qui passe le long de la bordure */
-@keyframes light-trail {
+@keyframes light-trail-1 {
     0% {
         border-color: var(--trade-text-color) transparent transparent transparent;
         /* Haut */
@@ -210,7 +216,7 @@ header {
 
 /* section-trade-color */
 .section-trade-color {
-    background-color: var(--bg-color);
+    background-color: var(--secondary-color);
     color: var(--text-color);
 }
 
@@ -293,4 +299,5 @@ footer ul.list-unstyled li::before {
 .owl-carousel img {
     max-width: 70%;
     border-radius: 8px;
+    height: auto;
 }

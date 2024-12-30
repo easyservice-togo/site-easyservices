@@ -12,7 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Flatpickr CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="appartement.css">
+    <link rel="stylesheet" href="voiture.css">
     <link rel="icon" href="images/favicon.ico" sizes="32x32">
 </head>
 
@@ -83,20 +83,26 @@
                 <div class="d-flex flex-column flex-md-row align-items-center gap-3">
                     <!-- Sélection du pays -->
                     <select name="" id="" class="form-control fw-bold form-select">
-                        <option value="" disabled selected>Pays</option>
-                        <option value="">Togo</option>
-                        <option value="">Côte d'Ivoire</option>
+                        <option value="" disabled selected>Type de location</option>
+                        <option value="">Voiture avec chauffeur</option>
+                        <option value="">Voiture</option>
                     </select>
 
                     <!-- Sélection du quartier -->
-                    <select name="quartier" id="quartier" class="form-select fw-bold">
+                    <!-- <select name="quartier" id="quartier" class="form-select fw-bold">
                         <option value="" disabled selected>Quartier</option>
                         <optgroup label="Lomé">
                             <option value="hedzranawoe">Hedzranawoe</option>
                             <option value="adidogome">Adidoadin</option>
                             <option value="togblekope">Adewui</option>
                         </optgroup>
-                    </select>
+                    </select> -->
+                    <!-- Custom date range picker -->
+                    <div class="input-group">
+                        <input type="text" id="dateRange" class="form-control fw-bold"
+                            placeholder="Sélectionnez une plage de dates" readonly />
+                        <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
+                    </div>
 
                     <!-- Custom date range picker -->
                     <!-- <div class="input-group">
@@ -105,7 +111,7 @@
                         <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
                     </div> -->
                     <!-- Sélection du quartier -->
-                    <select name="quartier" id="quartier" class="form-select fw-bold">
+                    <!-- <select name="quartier" id="quartier" class="form-select fw-bold">
                         <option value="" disabled selected>Type d'appartement</option>
                         <optgroup label="Meublés">
                             <option value="hedzranawoe">2 Chambre salon</option>
@@ -113,7 +119,7 @@
                             <option value="togblekope">Studio</option>
                             <option value="togblekope">Villa</option>
                         </optgroup>
-                    </select>
+                    </select> -->
 
                     <!-- Bouton de recherche -->
                     <button class="btn btn-outline-secondary fw-bold">
@@ -127,132 +133,94 @@
 
     <section>
         <div class="container">
-            <h3 class="text-muted">Appartements meublés</h3>
+            <h3 class="text-muted">Nos voitures</h3>
         </div>
     </section>
-    <!-- Apartments Section -->
-    <section class="py-5">
+    <!-- cars Section -->
+    <section>
         <div class="container">
-            <!-- Category 1 -->
-            <span class="fw-bold btn mb-2 category">2 Chambres Salon</span>
-            <div class="row g-4">
-                <div class="col-md-4 ">
-                    <a href="detail-appartement.html" style="text-decoration: none;">
-                        <div class="card appartement-unit">
-                            <img src="images/appartements/image1.jpg" class="card-img-top" alt="Quartier Hedzranawoé">
-                            <div class="card-body">
-                                <h5 class="card-title">Quartier Hedzranawoé</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
+            <div class="row align-items-center border-top border-bottom py-4">
+                <div class="col-md-6">
+                    <img src="images/voitures/belta.png" alt="Toyota Belta" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <div class="pricing-box">
+                        <h2>TOYOTA BELTA</h2>
+                        <h3 class="price">35.000 XOF</h3>
+                        <h4 class="service-title">Location de voiture avec chauffeur</h4>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut
+                            aliquip ex ea commodo consequat.
+                        </p>
+                        <button class="btn btn-primary">Faire une Réservation</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center border-top border-bottom py-4">
+                <div class="col-md-6">
+                    <img src="images/voitures/belta.png" alt="Toyota Belta" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <div class="pricing-box">
+                        <h2>TOYOTA BELTA</h2>
+                        <h3 class="price">30.000 XOF</h3>
+                        <h4 class="service-title">Location de voiture sans chauffeur</h4>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut
+                            aliquip ex ea commodo consequat.
+                        </p>
+                        <button class="btn btn-primary">Faire une Réservation</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center border-top border-bottom py-4">
+                <div class="col-md-6">
+                    <img src="images/voitures/corolla.png" alt="Toyota Belta" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <div class="pricing-box">
+                        <h2>TOYOTA COROLLA DROGBA</h2>
+                        <h3 class="price">25.000 XOF</h3>
+                        <h4 class="service-title">Location de voiture avec chauffeur</h4>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut
+                            aliquip ex ea commodo consequat.
+                        </p>
+                        <button class="btn btn-primary">Faire une Réservation</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center border-top border-bottom py-4">
+                <div class="col-md-6">
+                    <img src="images/voitures/corolla.png" alt="Toyota Belta" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <div class="pricing-box">
+                        <h2>TOYOTA COROLLA DROGBA</h2>
+                        <h3 class="price">20.000 XOF</h3>
+                        <h4 class="service-title">Location de voiture sans chauffeur</h4>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut
+                            aliquip ex ea commodo consequat.
+                        </p>
+                        <button class="btn btn-primary">Faire une Réservation</button>
+                    </div>
+                </div>
+            </div>
 
-                </div>
-                <div class="col-md-4">
-                    <a href="detail-appartement.html" style="text-decoration: none;">
-                        <div class="card appartement-unit">
-                            <img src="images/appartements/image1.jpg" class="card-img-top" alt="Quartier Hedzranawoé">
-                            <div class="card-body">
-                                <h5 class="card-title">Quartier Hedzranawoé</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="detail-appartement.html" style="text-decoration: none;">
-                        <div class="card appartement-unit">
-                            <img src="images/appartements/image1.jpg" class="card-img-top" alt="Quartier Hedzranawoé">
-                            <div class="card-body">
-                                <h5 class="card-title">Quartier Hedzranawoé</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <hr>
-            <!-- Category 2 -->
-            <span class="fw-bold btn my-5 category"><i class="fa-solid fa-house"></i>Chambre Salon</span>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <a href="detail-appartement.html" style="text-decoration: none;">
-                        <div class="card appartement-unit">
-                            <img src="images/appartements/image1.jpg" class="card-img-top" alt="Quartier Hedzranawoé">
-                            <div class="card-body">
-                                <h5 class="card-title">Quartier Hedzranawoé</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="detail-appartement.html" style="text-decoration: none;">
-                        <div class="card appartement-unit">
-                            <img src="images/appartements/image1.jpg" class="card-img-top" alt="Quartier Hedzranawoé">
-                            <div class="card-body">
-                                <h5 class="card-title">Quartier Hedzranawoé</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <hr>
 
-            <!-- Category 3 -->
-            <span class="fw-bold btn my-5 category">Studio</span>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <a href="detail-appartement.html" style="text-decoration: none;">
-                        <div class="card appartement-unit">
-                            <img src="images/appartements/image1.jpg" class="card-img-top" alt="Quartier Hedzranawoé">
-                            <div class="card-body">
-                                <h5 class="card-title">Quartier Hedzranawoé</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="detail-appartement.html" style="text-decoration: none;">
-                        <div class="card appartement-unit">
-                            <img src="images/appartements/image1.jpg" class="card-img-top" alt="Quartier Hedzranawoé">
-                            <div class="card-body">
-                                <h5 class="card-title">Quartier Hedzranawoé</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <hr>
-            <!-- Category 4 -->
-            <span class="btn fw-bold my-5 category">Villa</span>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <a href="detail-appartement.html" style="text-decoration: none;">
-                        <div class="card appartement-unit">
-                            <img src="images/appartements/image1.jpg" class="card-img-top" alt="Quartier Hedzranawoé">
-                            <div class="card-body">
-                                <h5 class="card-title">Quartier Hedzranawoé</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="detail-appartement.html" style="text-decoration: none;">
-                        <div class="card appartement-unit">
-                            <img src="images/appartements/image1.jpg" class="card-img-top" alt="Quartier Hedzranawoé">
-                            <div class="card-body">
-                                <h5 class="card-title">Quartier Hedzranawoé</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -293,17 +261,17 @@
     <script>
         // Textes à alterner
         const headlines = [
-            "Nos appartements meublés",
-            "Logements pour vos besoins",
-            "Un style qui vous convient",
+            "Découvrez nos voitures élégantes",
+            "Des véhicules pour chaque occasion",
+            "Le style et le confort réunis",
         ];
-
 
         const subtexts = [
-            "Nos offres s'adaptent à vos exigences",
-            "Réservez dès maintenant",
-            "Votre satisfaction est notre priorité",
+            "Des modèles conçus pour vous séduire",
+            "Réservez votre voiture dès maintenant",
+            "Roulez en toute sérénité avec nous",
         ];
+
 
         // Identifiants des zones de texte
         const headlineElement = document.getElementById("dynamicText");
